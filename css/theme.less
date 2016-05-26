@@ -1,0 +1,187 @@
+@import "components/_variables"; // no extension because multiple preprocessor types are supported and variables is a keyword.
+
+
+//Scalable and Modular CSS (SMACSS) system
+//divided into 5 sections : 1/Base rules 2/Layout rules 3/Module rules 4/State rules 5/Theme rules
+
+/*
+01. Base
+*/
+body {
+  background: @third-background;
+  font-family: @body-copy;
+  font-size: @base-font-size;
+  line-height: @base-line-height;
+  color: @primary-text;
+}
+ul,
+ol {
+}
+li {
+}
+a, a:link, a:visited {
+}
+a:hover {
+}
+p {
+}
+hr {
+}
+
+/*
+02. LAYOUT
+  Styles specific to your layout or website
+*/
+
+//Header
+.navbar-header {
+  margin-bottom: (@margin * 2);
+}
+.navbar {
+  background: @md-blue;
+  margin-bottom: 0;
+}
+.navbar-default,
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  background: @md-blue;
+  text-transform: uppercase;
+}
+.navbar-default .navbar-brand {
+  color: @inverse-text;
+  font-weight: 700;
+}
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: @md-light-blue;
+}
+.navbar-default {
+  border-color: @md-blue;
+}
+.navbar-default .navbar-nav > li > a {
+  color: @md-light-blue;
+  //text-transform: uppercase;
+}
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-toggle .icon-bar {
+  border-color: @md-blue;
+}
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: @md-dark-blue;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: @md-dark-blue;
+}
+#header-search {
+  height: 60px;
+  background: @secondary-background;
+  padding: 0 (@padding * 1.5);
+}
+.container {
+  //padding: 0 100px;
+}
+#header-search .input-group {
+  margin-top: 13px;
+}
+.header-filters {
+  background: @primary-background;
+  height: 60px;
+  line-height: 60px;
+}
+.btn-primary {
+  background: @md-pink;
+  border-color: @md-pink;
+  text-transform: uppercase;
+}
+//a subtle change on hover. Using an operator like
+//this will adjust the hex color slightly and give
+//you a different shade of the primary color
+.btn-primary:hover {
+  background: (@md-pink - #111);
+  border-color: (@md-pink - #111);
+}
+
+//Footer
+footer {
+  margin-top: (@margin * 6);
+  padding-bottom: (@padding * 6);
+  padding-top: (@padding * 2);
+  background: @md-grey;
+  color: @md-light-grey;
+  text-align: center;
+}
+footer a {
+   font-size: (@font-size * 2);
+   color: @md-light-grey;
+}
+footer a:hover {
+   color: @inverse-text;
+}
+
+//Body
+.feed {
+   background: @primary-background;
+   padding: (@padding * 2);
+   margin-bottom: (@margin * 2);
+   .round-corners;
+}
+.body{
+   background: @secondary-background;
+}
+.post {
+   padding-bottom: @padding;
+   border-bottom: @border-size @light-grey @border-type;
+   margin-top: (@margin * 2);
+}
+.post:first-child {
+   margin-top: 0;
+}
+.post small {
+   color: @md-light-grey;
+}
+.post small a {
+   color: @md-light-grey;
+   text-decoration: underline;
+}
+.post small a:hover {
+   color: @md-grey;
+}
+.feed-nav,
+.feed-pages {
+   margin-top: (@margin * 2);
+}
+.well h4 {
+   line-height:1.6em;
+}
+
+/***************************
+////////////////////////////
+
+03. MODULES
+
+Reusable classes or components
+
+////////////////////////////
+***************************/
+
+//@import "components/_navbar.less";
+//
+//@import "components/_buttons.less";
+
+@import "components/_well.less";
+
+//@import "components/_typography.less";
+//
+@import "components/_modal.less";
+
+/*
+05. THEME
+*/
+@media (max-width: 768px) {
+   .container {
+      padding-right: @padding;
+      padding-left: @padding;
+   }
+}
